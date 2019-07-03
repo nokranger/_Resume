@@ -13,6 +13,7 @@
                 <li><a :href="''+ twitter" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
                 <li><a :href="''+ linkedin" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
                 <li><a :href="''+ github" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                <li><a href="mailto:#" target="_blank"><i class="fas fa-at" aria-hidden="true"></i></a></li>
             </ul>
             <br>
             <ul class="social-icon">
@@ -41,11 +42,7 @@
             </div>
             <div class="col-md-12">
                 <p>
-rqwrqwrqrqw
-                </p>
-rqwrqwr
-                <p>
-
+                    {{aboutme}}
                 </p>
             </div>
         </div>
@@ -67,10 +64,16 @@ rqwrqwr
         <div class="row">
             <div class="col-md-12">
                 <div class="expertise-item">
-                    <h3>Professionally drive</h3>
-                    <p>
-                        Synergistically strategize customer directed resources rather than principle.
-                    </p>
+                    <div>
+                        <b><label>Name & Lastname</label></b> : <label>Mr.Anusorn Thavornpon</label><br>
+                        <b><label>Nickname</label></b> : <label>Nok</label><br>
+                        <b><label>Age</label></b> : <label>22 Years old</label><br>
+                        <b><label>Nationality</label></b> : <label>Thai</label><br>
+                        <b><label>Address</label></b> : <label>{{address}}</label><br>
+                        <b><label>Phone Number</label></b> : <a href="tel:0981265683"><label>{{tel1}}</label></a><label>,&nbsp;</label><a href="tel:0935745735"><label>{{tel2}}</label></a><br>
+                        <b><label>Email</label></b> : <a :href="''+ email"></a><label>{{email}}</label><br>
+                        <b><label>Desired Job</label></b> : <label>Programmer</label><br>
+                    </div>
                 </div>
             </div>
         </div>
@@ -243,7 +246,12 @@ rqwrqwr
                         </b-card-header>
                         <b-collapse id="accordion-1" visible accordion="my-accordion" role="tabpanel">
                             <b-card-body>
-                            <b-card-text>{{ faculty_text }}</b-card-text>
+                                <div>
+                                    <b><label style="font-size:1.17em">{{faculty_head_1}}</label></b> : <a :href="''+ wu" target="_blank"><label>{{faculty_text_1}}</label></a><br>
+                                    <b><label style="font-size:1.17em">{{faculty_head_2}}</label></b> : <label>{{faculty_text_2}}</label><br>
+                                    <b><label style="font-size:1.17em">{{faculty_head_3}}</label></b> : <label>{{faculty_text_3}}</label>
+                                    <!-- <b-card-text>{{ faculty_text }}</b-card-text> -->
+                                </div>
                             </b-card-body>
                         </b-collapse>
                         </b-card>
@@ -254,8 +262,11 @@ rqwrqwr
                         </b-card-header>
                         <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
                             <b-card-body>
-                            <b-card-text>I start opened because</b-card-text>
-                            <b-card-text>{{ high_text }}</b-card-text>
+                                <div>
+                                    <b><label>{{high_head_1}}</label></b> : <a :href="''+ tpw" target="_blank"><label>{{high_text_1}}</label></a><br>
+                                    <b><label>{{high_head_2}}</label></b> : <label>{{high_text_2}}</label><br>
+                                    <b><label>{{high_head_3}}</label></b> : <label>{{high_text_3}}</label><br>
+                                </div>
                             </b-card-body>
                         </b-collapse>
                         </b-card>
@@ -282,17 +293,17 @@ rqwrqwr
             <div class="col-md-12">
                 <address>
                     <strong>Address</strong><br>
-                    62/36 M2 Thung-mapraw<br>
-                   Thai-muang Phang-nga, TH 82120
+                    {{address1}}<br>
+                   {{address2}}
                 </address>
                 <address>
                     <strong>Mobile Number</strong><br>
-                    <a href="tel:098-1265683">098-1265683,</a><br>
-                    <a href="tel:093-5745735">093-5745735</a>
+                    <a href="tel:098-1265683">{{tel1}},</a><br>
+                    <a href="tel:093-5745735">{{tel2}}</a>
                 </address>
                 <address>
                     <strong>Email</strong><br>
-                    <a href="mailto:#">anusorn.thavornporn@gmail.com</a>
+                    <a href="mailto:#">{{email}}</a>
                 </address>
             </div>
         </div>
@@ -363,14 +374,32 @@ export default {
     return {
         high_status: true,
         faculty_status: false,
-        high_text: "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terryrichardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolorbrunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moontempor, sunt aliqua put a bird on it squid single-origin coffee nulla",
-        faculty_text: "fasfafasfasfasfsafasfsafasfsafsafsafa",
+        high_text_1: 'Thung-mapraw Wittaya School',
+        high_text_2: 'Science - Mathematics',
+        high_text_3: '2013 - 2015',
+        high_head_1: 'Educational institution',
+        high_head_2: 'Course',
+        high_head_3: 'Timeline',
+        faculty_head_1: 'Educational institution',
+        faculty_head_2: 'Faculty',
+        faculty_head_3: 'Timeline',
+        faculty_text_1: 'Walailak University',
+        faculty_text_2: 'Computer Engineering',
+        faculty_text_3: '2015 - 2018',
         facebook: 'https://web.facebook.com/anusornthavornpon',
         linkedin: 'https://www.linkedin.com/in/anusornthavornponcomen/',
         github: 'https://github.com/nokranger',
         twitter: 'https://twitter.com/nokraner',
-        title: 'Anusorn Thavornpon'
-
+        title: 'Anusorn Thavornpon',
+        wu: 'https://www.wu.ac.th/',
+        tpw: 'http://www.tpwy.ac.th/index.php',
+        aboutme: 'i am a newbie programmer',
+        email: 'anusorn.thavornporn@gmail.com',
+        tel1: '0981265683',
+        tel2: '0935745735',
+        address1: '62/36 M2 Thung-mapraw',
+        address2: 'Thai-muang Phang-nga, TH 82120',
+        address: '62/36 M2 Thung-mapraw Thai-muang Phang-nga, TH 82120'
      }
  }   
 }
